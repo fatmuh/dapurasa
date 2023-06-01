@@ -107,8 +107,8 @@
                                 class="btn btn-outline-danger"><i class="fas fa-trash"></i></a>
                         </td>
                     </tr>
-                    {{-- @include('pages.produk.delete') --}}
-                    {{-- @include('pages.produk.edit') --}}
+                    @include('admin.pages.restaurant.delete')
+                    @include('admin.pages.restaurant.edit')
                     @endforeach
                 </tbody>
             </table>

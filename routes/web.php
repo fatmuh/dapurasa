@@ -30,5 +30,7 @@ Route::middleware(['auth','ceklevel:Admin'])->group(function () {
     Route::controller(RestaurantController::class)->prefix('admin/restaurant')->name('restaurant.')->group( function() {
         Route::get('/', 'index')->name('index');
         Route::put('/store', 'store')->name('store');
+        Route::put('/delete/{id}', 'delete')->name('delete');
+        Route::put('/update/{id}', 'update')->name('update');
     });
 });
