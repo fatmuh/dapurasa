@@ -105,7 +105,7 @@
 
     <!-- ============================================-->
     <!-- <section> begin ============================-->
-    <section class="py-8 overflow-hidden">
+    {{-- <section class="py-8 overflow-hidden">
 
         <div class="container">
             <div class="row flex-center mb-6">
@@ -380,7 +380,7 @@
             </div>
         </div><!-- end of .container-->
 
-    </section>
+    </section> --}}
     <!-- <section> close ============================-->
     <!-- ============================================-->
 

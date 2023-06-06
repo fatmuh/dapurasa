@@ -41,7 +41,7 @@
     <main class="main" id="top">
         <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top"
             data-navbar-on-scroll="data-navbar-on-scroll">
-            <div class="container"><a class="navbar-brand d-inline-flex" href="index.html"><img class="d-inline-block"
+            <div class="container"><a class="navbar-brand d-inline-flex" href="{{ route("landing.index") }}"><img class="d-inline-block"
                         src="{{ asset('assets/img/gallery/logo.svg') }}" alt="logo" /><span
                         class="text-1000 fs-3 fw-bold ms-2 text-gradient">Dapurasa</span></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
