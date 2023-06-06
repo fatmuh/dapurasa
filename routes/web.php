@@ -19,6 +19,7 @@ use App\Http\Controllers\LandingPageController;
 
 Route::controller(LandingPageController::class)->name('landing.')->group( function() {
     Route::get('/', 'index')->name('index');
+    Route::get('/product/{restaurant_id}', 'product')->name('product');
 });
 
 Auth::routes();

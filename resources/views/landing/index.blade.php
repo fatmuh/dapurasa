@@ -74,24 +74,26 @@
             </div>
             <div class="row gx-2">
                 @foreach ($restaurant as $res)
-                <div class="col-sm-6 col-md-4 col-lg-3 h-100 mb-5">
-                    <div class="card card-span h-100 text-white rounded-3"><img class="img-fluid rounded-3 h-100"
-                            src="{{ asset('storage/'. old('image', $res->image)) }}" alt="..." />
-                        <div class="card-body ps-0">
-                            <div class="d-flex align-items-center mb-3"><img class="img-fluid"
-                                    src="{{ asset('storage/'. old('logo', $res->logo)) }}" width="90px" />
-                                <div class="flex-1 ms-3">
-                                    <h5 class="mb-0 fw-bold text-1000">{{ $res->name }}</h5>
-                                </div>
-                            </div><span
-                                class="badge {{ ($res->status === 'OPEN') ? 'bg-soft-success' : 'bg-soft-danger' }} p-2">
-                                <span
-                                    class="fw-bold fs-1 {{ ($res->status === 'OPEN') ? 'text-success' : 'text-danger' }}">{{ $res->status }}</span>
-                            </span>
+                <a href="{{ route('landing.product', $res->id) }}">
+                    <div class="col-sm-6 col-md-4 col-lg-3 h-100 mb-5">
+                        <div class="card card-span h-100 text-white rounded-3"><img class="img-fluid rounded-3 h-100"
+                                src="{{ asset('storage/'. old('image', $res->image)) }}" alt="..." />
+                            <div class="card-body ps-0">
+                                <div class="d-flex align-items-center mb-3"><img class="img-fluid"
+                                        src="{{ asset('storage/'. old('logo', $res->logo)) }}" width="90px" />
+                                    <div class="flex-1 ms-3">
+                                        <h5 class="mb-0 fw-bold text-1000">{{ $res->name }}</h5>
+                                    </div>
+                                </div><span
+                                    class="badge {{ ($res->status === 'OPEN') ? 'bg-soft-success' : 'bg-soft-danger' }} p-2">
+                                    <span
+                                        class="fw-bold fs-1 {{ ($res->status === 'OPEN') ? 'text-success' : 'text-danger' }}">{{ $res->status }}</span>
+                                </span>
 
+                            </div>
                         </div>
                     </div>
-                </div>
+                </a>
                 @endforeach
 
                 <div class="col-12 d-flex justify-content-center mt-5"> <a class="btn btn-lg btn-primary" href="#!">View
