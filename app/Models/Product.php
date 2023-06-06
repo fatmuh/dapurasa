@@ -5,22 +5,23 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Restaurant extends Model
+class Product extends Model
 {
     use HasFactory;
 
-    protected $table = 'restaurant';
+    protected $table = 'product';
     protected $fillable = [
+        'restaurant_id',
         'name',
-        'logo',
+        'description',
+        'price',
         'image',
-        'status',
     ];
 
     protected $hidden;
 
-    public function product()
+    public function restaurant()
     {
-        return $this->hasOne(Product::class, 'restaurant_id');
+        return $this->belongsTo(Restaurant::class, 'restaurant_id', 'id');
     }
 }

@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\RestaurantController;
 use App\Http\Controllers\LandingPageController;
 
@@ -28,6 +29,13 @@ Route::middleware(['auth','ceklevel:Admin'])->group(function () {
     });
 
     Route::controller(RestaurantController::class)->prefix('admin/restaurant')->name('restaurant.')->group( function() {
+        Route::get('/', 'index')->name('index');
+        Route::put('/store', 'store')->name('store');
+        Route::put('/delete/{id}', 'delete')->name('delete');
+        Route::put('/update/{id}', 'update')->name('update');
+    });
+
+    Route::controller(ProductController::class)->prefix('admin/product')->name('product.')->group( function() {
         Route::get('/', 'index')->name('index');
         Route::put('/store', 'store')->name('store');
         Route::put('/delete/{id}', 'delete')->name('delete');
