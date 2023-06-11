@@ -27,7 +27,12 @@
                         </div>
                     </div>
                     <div class="d-grid gap-2">
+                        @guest
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                        data-bs-target="#exampleModal">Masuk</button>
+                        @else
                         <button type="button" class="btn btn-lg btn-danger" data-bs-toggle="modal" data-bs-target="#orderNow{{ $produk->id }}">Order now</button>
+                        @endguest
                     </div>
                 </div>
                 @include('landing.modal.order')
