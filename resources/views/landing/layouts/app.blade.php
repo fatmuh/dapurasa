@@ -62,7 +62,15 @@
                                     class="fas fa-user me-2"></i>{{ Auth::user()->name }}</a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="{{ route('landing.my-order') }}">Pesanan Saya</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li><a class="dropdown-item" href="{{ route('landing.history-order') }}">Riwayat Pesanan</a></li>
+                                <li><a class="dropdown-item" href="{{ route('landing.profil') }}">Profil</a></li>
+                                <li><a class="dropdown-item" href="{{ route('landing.changePassword') }}">Ganti Password</a></li>
+                                @if (auth()->user()->roles == "Admin")
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" href="{{ route('admin.index') }}">Admin Dashboard</a></li>
+                                @endif
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>

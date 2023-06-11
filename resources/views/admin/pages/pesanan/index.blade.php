@@ -20,20 +20,22 @@
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                     <tr class="text-center">
-                        <th style="width:60px;">No</th>
+                        <th style="width:30px;">No</th>
+                        <th>No Order</th>
                         <th>Produk</th>
                         <th>Restaurant</th>
                         <th>Quantity</th>
                         <th>Total</th>
                         <th>Waktu Antar</th>
                         <th>Status</th>
-                        <th style="width: 200px">Action</th>
+                        <th style="width: 150px">Action</th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach ($data as $order)
                     <tr class="text-center">
                         <td>{{ $loop->iteration }}</td>
+                        <td>#{{ $order->id }}</td>
                         <td>{{ $order->product->name }}</td>
                         <td>{{ $order->product->restaurant->name }}</td>
                         <td>{{ $order->quantity }}</td>

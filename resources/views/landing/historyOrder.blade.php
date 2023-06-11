@@ -1,7 +1,7 @@
 @extends('landing.layouts.app')
 
 @section('title')
-<title>Dapurasa - Pesanan Saya</title>
+<title>Dapurasa - Riwayat Pesanan</title>
 @endsection
 
 @section('content')
@@ -10,7 +10,7 @@
     <div class="container">
         <div class="row h-100">
             <div class="col-lg-7 mx-auto text-center mb-6">
-                <h5 class="fw-bold fs-3 fs-lg-5 lh-sm mb-3">Pesanan Saya</h5>
+                <h5 class="fw-bold fs-3 fs-lg-5 lh-sm mb-3">Riwayat Pesanan</h5>
             </div>
         </div>
         <div class="text-center">

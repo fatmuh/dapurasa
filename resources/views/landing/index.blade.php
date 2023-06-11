@@ -14,8 +14,8 @@
                 <div class="col-md-7 col-lg-6 py-8 text-md-start text-center">
                     <h1 class="display-1 fs-md-5 fs-lg-6 fs-xl-8 text-light">Kamu lapar?</h1>
                     <h1 class="text-800 mb-5 mt-4 fs-4">Dalam beberapa klik, makanan anda akan diantar<br
-                            class="d-none d-xxl-block" />sesuai pesanan anda!</h1>
-                    <a href="#" class="btn btn-danger" type="submit">Find Food</a>
+                            class="d-none d-xxl-block" /> sesuai pesanan anda!</h1>
+                    <a href="#restaurant" class="btn btn-danger" type="submit">Find Food</a>
                 </div>
             </div>
         </div>
@@ -69,7 +69,7 @@
     <!-- <section> close ============================-->
     <!-- ============================================-->
 
-    <section id="testimonial">
+    <section id="restaurant">
         <div class="container">
             <div class="row h-100">
                 <div class="col-lg-7 mx-auto text-center mb-6">

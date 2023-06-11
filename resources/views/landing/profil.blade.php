@@ -1,7 +1,7 @@
 @extends('landing.layouts.app')
 
 @section('title')
-<title>Dapurasa - Pesanan Saya</title>
+<title>Dapurasa - Profil</title>
 @endsection
 
 @section('content')
@@ -10,63 +10,36 @@
     <div class="container">
         <div class="row h-100">
             <div class="col-lg-7 mx-auto text-center mb-6">
-                <h5 class="fw-bold fs-3 fs-lg-5 lh-sm mb-3">Pesanan Saya</h5>
+                <h5 class="fw-bold fs-3 fs-lg-5 lh-sm mb-3">Profile Saya</h5>
             </div>
         </div>
-        <div class="text-center">
-            <table class="table table-hover">
-                <thead class="table-primary">
-                    <tr>
-                        <th scope="col">No Order</th>
-                        <th scope="col">Pesanan</th>
-                        <th scope="col">Restaurant</th>
-                        <th scope="col">Jumlah</th>
-                        <th scope="col">Total Harga</th>
-                        <th scope="col">Status</th>
-                        <th scope="col">Bukti Transfer</th>
-                        <th scope="col">Waktu Pengambilan</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach ($data as $order)
-                    <tr>
-                        <th scope="row">#{{ $order->id }}</th>
-                        <td>{{ $order->product->name }}</td>
-                        <td>{{ $order->product->restaurant->name }}</td>
-                        <td>{{ $order->quantity }}</td>
-                        <td>
-                            @php
-                            $total = $order->quantity * $order->product->price;
-                            @endphp
-                            {{ "Rp".number_format($total,2,',','.') }}
-                        </td>
-                        <td>
-                            @if ($order->status == 'Pending')
-                                <span class="badge btn-dark">Pending</span>
-                            @elseif ($order->status == 'Cooking')
-                                <span class="badge btn-primary">Cooking</span>
-                            @elseif ($order->status == 'Delivery Preparation')
-                                <span class="badge btn-primary">Delivery Preparation</span>
-                            @elseif ($order->status == 'Delivering')
-                                <span class="badge btn-primary">Delivering</span>
-                            @elseif ($order->status == 'Delivered')
-                                <span class="badge btn-success">Delivered</span>
-                            @else
-                                <span class="badge btn-danger">Cancelled</span>
-                            @endif
-                        </td>
-                        <td>
-                            @if ($order->proof_of_payment == null)
-                                -
-                            @else
-                                <a href="{{ asset('storage/'.$order->proof_of_payment) }}" class="badge btn-primary" target="_blank">Lihat Bukti</a>
-                            @endif
-                        </td>
-                        <td>{{ date('d M Y \J\a\m H:i', strtotime($order->delivery_time)) }}</td>
-                    </tr>
-                    @endforeach
-                </tbody>
-            </table>
+        <div>
+            <form class="row g-3" action="{{ route('landing.profil.update') }}" method="POST">
+                @csrf
+                <div class="col-md-6">
+                  <label class="form-label">Name</label>
+                  <input type="text" class="form-control" name="name" value="{{ auth()->user()->name }}">
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">Email</label>
+                  <input type="text" class="form-control" name="email" value="{{ auth()->user()->email }}">
+                </div>
+
+                <div class="col-md-6 mt-3">
+                    <label class="form-label">Address</label>
+                    <textarea type="text" class="form-control" name="address">{{ auth()->user()->address }}</textarea>
+                </div>
+                <div class="col-md-6 mt-3">
+                    <label class="form-label">Phone</label>
+                    <input type="number" class="form-control" name="phone" value="{{ auth()->user()->phone }}">
+                </div>
+
+                <div class="col-12">
+                    <div class="d-flex align-items-center justify-content-end mt-4 gap-3">
+                        <button class="btn btn-primary">Save</button>
+                    </div>
+                </div>
+            </form>
         </div>
     </div>
 </section>
