@@ -73,13 +73,6 @@
                     <span>Produk</span></a>
             </li>
 
-            <!-- Nav Item - Tables -->
-            <li class="nav-item">
-                <a class="nav-link" href="tables.html">
-                    <i class="fas fa-fw fa-credit-card"></i>
-                    <span>Member</span></a>
-            </li>
-
             <!-- Divider -->
             <hr class="sidebar-divider">
 
@@ -90,23 +83,9 @@
 
             <!-- Nav Item - Charts -->
             <li class="nav-item">
-                <a class="nav-link" href="charts.html">
-                    <i class="fas fa-fw fa-money-bill"></i>
-                    <span>Pengeluaran</span></a>
-            </li>
-
-            <!-- Nav Item - Tables -->
-            <li class="nav-item">
                 <a class="nav-link" href="tables.html">
-                    <i class="fas fa-fw fa-cart-plus"></i>
-                    <span>Pembelian</span></a>
-            </li>
-
-            <!-- Nav Item - Tables -->
-            <li class="nav-item">
-                <a class="nav-link" href="tables.html">
-                    <i class="fas fa-fw fa-cart-arrow-down"></i>
-                    <span>Penjualan</span></a>
+                    <i class="fas fa-fw fa-shopping-cart"></i>
+                    <span>Pesanan</span></a>
             </li>
 
             <!-- Divider -->
@@ -114,14 +93,14 @@
 
             <!-- Heading -->
             <div class="sidebar-heading">
-                Report
+                Admin
             </div>
 
             <!-- Nav Item - Charts -->
             <li class="nav-item">
                 <a class="nav-link" href="charts.html">
-                    <i class="fas fa-fw fa-file-pdf"></i>
-                    <span>Laporan</span></a>
+                    <i class="fas fa-fw fa-user"></i>
+                    <span>User</span></a>
             </li>
 
             <!-- Divider -->
