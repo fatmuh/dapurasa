@@ -10,7 +10,7 @@
     <!-- ===============================================-->
     <!--    Document Title-->
     <!-- ===============================================-->
-    <title>Dapurasa</title>
+    @yield('title')
 
 
     <!-- ===============================================-->
@@ -29,7 +29,6 @@
     <!--    Stylesheets-->
     <!-- ===============================================-->
     <link href="{{ asset('assets/css/theme.css') }}" rel="stylesheet" />
-
 </head>
 
 
@@ -62,7 +61,7 @@
                             <a class="btn btn-primary" href="{{ route('landing.index') }}" data-bs-toggle="dropdown"> <i
                                     class="fas fa-user me-2"></i>{{ Auth::user()->name }}</a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="{{ route('landing.my-order') }}">Pesanan Saya</a></li>
                                 <li><a class="dropdown-item" href="#">Another action</a></li>
                                 <li>
                                     <hr class="dropdown-divider">
@@ -252,6 +251,8 @@
     <!-- ===============================================-->
     <!--    JavaScripts-->
     <!-- ===============================================-->
+    @include('sweetalert::alert')
+
     <script src="{{ asset('assets/vendors/@popperjs/popper.min.js') }}"></script>
     <script src="{{ asset('assets/vendors/bootstrap/bootstrap.min.js') }}"></script>
     <script src="{{ asset('vendors/is/is.min.js') }}"></script>

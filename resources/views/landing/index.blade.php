@@ -1,5 +1,9 @@
     @extends('landing.layouts.app')
 
+    @section('title')
+        <title>Dapurasa</title>
+    @endsection
+
     @section('content')
     <section class="py-5 overflow-hidden bg-primary" id="home">
         <div class="container">
@@ -96,8 +100,8 @@
                 </a>
                 @endforeach
 
-                <div class="col-12 d-flex justify-content-center mt-5"> <a class="btn btn-lg btn-primary" href="#!">View
-                        All <i class="fas fa-chevron-right ms-2"> </i></a></div>
+                {{-- <div class="col-12 d-flex justify-content-center mt-5"> <a class="btn btn-lg btn-primary" href="#!">View
+                        All <i class="fas fa-chevron-right ms-2"> </i></a></div> --}}
             </div>
         </div>
     </section>

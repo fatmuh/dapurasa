@@ -19,7 +19,7 @@ class CreateOrderTable extends Migration
             $table->integer('users_id');
             $table->integer('quantity');
             $table->string('type_of_payment');
-            $table->longText('proof_of_payment');
+            $table->longText('proof_of_payment')->nullable();
             $table->longText('delivery_address');
             $table->string('delivery_time');
             $table->string('status');
