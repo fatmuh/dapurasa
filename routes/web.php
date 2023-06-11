@@ -48,4 +48,10 @@ Route::middleware(['auth','ceklevel:Admin'])->group(function () {
         Route::put('/delete/{id}', 'delete')->name('delete');
         Route::put('/update/{id}', 'update')->name('update');
     });
+
+    Route::controller(OrderController::class)->prefix('admin/order')->name('order.')->group( function() {
+        Route::get('/', 'index')->name('index');
+        Route::put('/update/{id}', 'update')->name('update');
+        Route::put('/delete/{id}', 'delete')->name('delete');
+    });
 });

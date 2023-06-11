@@ -82,8 +82,8 @@
             </div>
 
             <!-- Nav Item - Charts -->
-            <li class="nav-item">
-                <a class="nav-link" href="tables.html">
+            <li class="nav-item {{ request()->routeIs('order.index') ? 'active' : '' }}">
+                <a class="nav-link" href="{{ route('order.index') }}">
                     <i class="fas fa-fw fa-shopping-cart"></i>
                     <span>Pesanan</span></a>
             </li>

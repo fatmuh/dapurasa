@@ -4,9 +4,25 @@ namespace App\Http\Controllers;
 
 use App\Models\Order;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class OrderController extends Controller
 {
+    public function index()
+    {
+        $data = Order::orderByRaw("CASE
+                                    WHEN status = 'Delivered' THEN 1
+                                    WHEN status = 'Cancelled' THEN 2
+                                    ELSE 0
+                                    END")
+                    ->latest()
+                    ->get();
+
+        return view('admin.pages.pesanan.index', [
+            'data' => $data,
+        ]);
+    }
+
     public function store(Request $request)
     {
         if ($request->type_of_payment == "Transfer" && $request->proof_of_payment == null) {
@@ -40,5 +56,23 @@ class OrderController extends Controller
         }
 
         return redirect()->route('landing.my-order')->with('toast_success', 'Pesanan Berhasil Dibuat!');
+    }
+
+    public function update(Request $request, $id)
+    {
+        $item = Order::findOrFail($id);
+        $data = $request->except(['_token']);
+        $item->update($data);
+        return redirect()->route('order.index')->with('toast_success', 'Status Pesanan Berhasil Diubah!');
+    }
+
+    public function delete($id)
+    {
+        $item = Order::findOrFail($id);
+        if($item->proof_of_payment){
+            Storage::delete($item->proof_of_payment);
+        }
+        $item->delete();
+        return redirect()->route('order.index')->with('toast_success', 'Pesanan Berhasil Dihapus!');
     }
 }
